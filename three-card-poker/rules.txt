@@ -1,0 +1,42 @@
+
+Videopoker-Spiel mit drei Karten
+
+Ziel des Spiels ist es, das Guthaben zu vermehren. Dazu kann der Spieler seinen Einsatz pro Hand wählen.
+Als "Hand" gilt die Kombination der drei verfügbaren Karten.
+
+Es gibt zwei Spielrunden:
+- in der ersten Spielrunde werden drei neue Karten aufgedeckt
+- der Spieler kann nun durch Anklicken der Karten bestimmen, 
+  welche Karte(n) er halten möchte und welche Karte(n) neu gemischt werden sollen
+- Der Text über den Karten signalisiert ob eine Karte gehalten wird ("Hold") oder
+  neu gemischt werden soll ("Draw")
+
+- in der zweiten Runde werden dann die entsprechenden Karten (oder auch keine Karte)
+  neu gemischt
+- nach der zweiten Runde wird die beste Kombination der drei Karte ermittelt und 
+  entsprechend die Punkte erteilt
+
+
+Das Spiel ist beendet, sobald der Spieler kein Guthaben mehr hat oder das Spiel per Knopfdruck beendet.
+
+
+Folgende Kombinationen ("Hände" sind möglich):
+- Pair 			(zwei gleiche Karten)
+- Three of a kind 	(drei gleiche Karten, z.B. dreimal Ass oder dreimal die 7)
+- Flush			(drei Karten gleicher Farbe, z.B. drei Karo oder drei Pik)
+- Straight		(drei aufeinanderfolgende Karten, z.B. [3,4,5] oder [Q,K,A])
+- Three face cards	(drei unterschiedliche Karten von Bube bis Ass; nur wenn 
+			 es keinen Flush und keine Straight ergibt, z.B. ([J,Q,A]
+- Straight Flush	(drei aufeinanderfolgende Karten gleicher Farbe)
+- Royal Flush		(Straight Flush mit Ass als höchster Karte)
+
+
+Kleinere Bugs sowie zusätzliche Features werden zukünftig behoben bzw. hinzugefügt.
+
+Things to come:
+- Highscore-Liste
+- Übersicht mit Statistiken (in Verbindung mit Datenbank)
+- Ingame-Übersicht der Spielregeln
+- Double-or-Nothing-Funktion
+- Animation der Karten: diese werden leicht zeitversetzt aufgedeckt
+- diverse optische Verbesserungen :-)
