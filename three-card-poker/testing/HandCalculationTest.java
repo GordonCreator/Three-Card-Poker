@@ -9,22 +9,6 @@ import calculations.CardShuffler;
 import calculations.HandCalculator;
 
 class HandCalculationTest {
-	
-	/*
-	 * *****extra Setter ergänzen um ArrayList remainingDeck künstlich zu leeren/füllen*****
-	 * 
-	 * welche andere(n) Methode(n) könnte ich noch zum Testen nutzen? Und wie?
-	 * -> pickRandomCard mit 53. Karte testen und prüfen dass keine Karte doppelt vorkommt -> welche Exception kommt dann? 
-	 *    wie abfangen wenn ArrayList leer ist? - auch wenn remainingDeck immer wieder aufgefüllt wird 
-	 * 
-	 * @setup -> setup für alle Karten am Anfang festlegen
-	 *   z.B. für HandCalculator, da immer festes Board (Karten)
-	 * 
-	 *   macht es Sinn Methoden umzuschreiben (mit Parameterübergabe), damit das Testen leichter ist?
-	 *      -> vergessen zu fragen
-	 *      
-	 *      eigen Testklasse für Cardshuffler schreiben? (ist aktuell noch in Testklasse für HandCalculator)
-	 */
 		
 	HandCalculator handCalculator = new HandCalculator();
 	CardShuffler cardShuffler = new CardShuffler();
