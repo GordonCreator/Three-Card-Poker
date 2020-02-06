@@ -8,12 +8,23 @@ import calculations.Card;
 import calculations.CardShuffler;
 import calculations.HandCalculator;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@DisplayName("Testing hand calculations")
 class HandCalculationTest {
 		
-	HandCalculator handCalculator = new HandCalculator();
-	CardShuffler cardShuffler = new CardShuffler();
+	HandCalculator handCalculator;
+	TestReporter testReporter;
+	
+	@BeforeAll
+	void init(TestReporter testReporter) {
+		handCalculator = new HandCalculator();
+		this.testReporter = testReporter;
+		
+		testReporter.publishEntry("Running hand calculation tests");
+	}
 	
 	@Test
+	@DisplayName("Pair")
 	void testHandCalculationPair() {
 
 		Card card0 = new Card(5,0);		// 7 of Clubs
@@ -26,6 +37,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("Three Face Cards")
 	void testHandCalculationThreeFaceCards() {
 
 		Card card0 = new Card(11,0);		// King of Clubs
@@ -38,6 +50,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("Flush")
 	void testHandCalculationFlush() {
 
 		Card card0 = new Card(5,1);		// 7 of Diamonds
@@ -50,6 +63,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("Straight")
 	void testHandCalculationStraight() {
 
 		Card card0 = new Card(5,0);		// 7 of Clubs
@@ -62,6 +76,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("Three of a Kind")
 	void testHandCalculationThreeOfAKind() {
 
 		Card card0 = new Card(0,1);		// 2 of Clubs
@@ -74,6 +89,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("StraightFlush")
 	void testHandCalculationStraightFlush() {
 
 		Card card0 = new Card(0,3);		// 2 of Spades
@@ -86,6 +102,7 @@ class HandCalculationTest {
 	}
 	
 	@Test
+	@DisplayName("Royal Flush")
 	void testHandCalculationRoyalFlush() {
 
 		Card card0 = new Card(10,2);	// Queen of Hearts
@@ -97,11 +114,5 @@ class HandCalculationTest {
 		assertEquals(750, handCalculator.calculateHandStrength(board));
 	}
 	
-	@Test
-	void testGetRandomCardWithEmptyRemainingDeck() {
-		
-		cardShuffler.clearRemainingDeck();
-		cardShuffler.getRandomCard(0);
 	
-	}
 }
